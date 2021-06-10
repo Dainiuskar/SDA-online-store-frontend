@@ -8,11 +8,13 @@ import {FormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import {UserAccountFormComponent} from "./user-account/user-account-form/user-account-form.component";
 import {UserService} from "./services/user-service/user.service";
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
     declarations: [
         AppComponent,
-        UserAccountFormComponent
+        UserAccountFormComponent,
+        LoginComponent
     ],
     imports: [
         BrowserModule,

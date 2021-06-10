@@ -21,11 +21,11 @@ export class UserAccountFormComponent implements OnInit {
 
   onSubmit(){
     this.userService.save(this.user)
-        .subscribe(result => this.gotoLogin());
+        .subscribe(() => this.gotoLogin());
   }
 
   private gotoLogin() {
-    this.router.navigate(['']);
+    this.router.navigate(['login']);
   }
 
   ngOnInit(): void {
