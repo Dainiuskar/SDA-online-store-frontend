@@ -1,5 +1,5 @@
 import {Component, OnChanges, SimpleChanges} from '@angular/core';
-import {UserService} from "./services/user-service/user.service";
+import {UserService} from "./services/user-service/user-service";
 
 @Component({
   selector: 'app-root',
@@ -7,7 +7,7 @@ import {UserService} from "./services/user-service/user.service";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'OnlineStore';
+  title = 'ONLINE STORE';
   userService: UserService;
 
   constructor(userService: UserService) {

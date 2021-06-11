@@ -1,6 +1,6 @@
 import {Injectable} from "@angular/core";
 import {AbstractControl, AsyncValidatorFn, ValidatorFn} from "@angular/forms";
-import {UserService} from "../services/user-service/user.service";
+import {UserService} from "../services/user-service/user-service";
 import {Observable, of} from "rxjs";
 import {debounceTime, map, switchMap, take} from "rxjs/operators";
 
