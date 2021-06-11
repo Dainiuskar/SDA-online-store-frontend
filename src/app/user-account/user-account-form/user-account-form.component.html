@@ -2,14 +2,16 @@
     <div class="card-body">
         <form (ngSubmit)="onSubmit()" #userForm="ngForm">
             <div class="form-group">
-                <label for="login">Login</label>
+                <label for="login">Username</label>
                 <input type="text" [(ngModel)]="user.login"
                        class="form-control"
                        id="login"
                        name="login"
-                       placeholder="Enter your Login"
+                       placeholder="Enter your Username"
                        required #login="ngModel">
-                <div [hidden]="!login.pristine" class="alert alert-danger">Login is required</div>
+                <div *ngIf="login.invalid && (login.dirty || login.touched)" class="alert alert-danger">
+                    <p *ngIf="login.errors?.required">Username is required.</p>
+                </div>
             </div>
             <div class="form-group">
                 <label for="password">Password</label>
@@ -19,7 +21,9 @@
                        name="password"
                        placeholder="Create your password"
                        required #password="ngModel">
-                <div [hidden]="!password.pristine" class="alert alert-danger">Password is required</div>
+                <div *ngIf="password.invalid && (password.dirty || password.touched)" class="alert alert-danger">
+                    <div *ngIf="password.errors?.required">Password is required.</div>
+                </div>
             </div>
             <div class="form-group">
                 <label for="name">Name</label>
@@ -29,7 +33,9 @@
                        name="name"
                        placeholder="Enter your name"
                        required #name="ngModel">
-                <div [hidden]="!name.pristine" class="alert alert-danger">Name is required</div>
+                <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
+                    <div *ngIf="name.errors?.required">Name is required.</div>
+                </div>
             </div>
             <div class="form-group">
                 <label for="lastName">LastName</label>
@@ -39,7 +45,9 @@
                        name="lastName"
                        placeholder="Enter your lastName"
                        required #lastName="ngModel">
-                <div [hidden]="!lastName.pristine" class="alert alert-danger">LastName is required</div>
+                <div *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)" class="alert alert-danger">
+                    <div *ngIf="lastName.errors?.required">LastName is required.</div>
+                </div>
             </div>
             <div class="form-group">
                 <label for="country">Country</label>
@@ -74,7 +82,8 @@
                        placeholder="Enter your zipCode">
             </div>
             <button type="submit" [disabled]="!userForm.form.valid"
-                    class="btn btn-info">Submit</button>
+                    class="btn btn-info">Submit
+            </button>
         </form>
     </div>
 </div>

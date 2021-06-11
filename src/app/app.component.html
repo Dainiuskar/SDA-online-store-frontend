@@ -1,24 +1,25 @@
 <div class="container">
-  <div class="row">
-    <div class="col-md-12">
-      <div class="card bg-dark my-5">
-        <div class="card-body">
-          <h2 class="card-title text-center text-white py-3">{{ title }}</h2>
-          <ul class="text-center list-inline py-3">
-            <li class="list-inline-item">
-              <a routerLink="/home" class="btn btn-info">Home</a>
-            </li>
-            <li class="list-inline-item">
-              <a routerLink="/login" class="btn btn-info">Login</a>
-            </li>
-            <li class="list-inline-item">
-              <a routerLink="/addUser" class="btn btn-info">Register</a>
-            </li>
-          </ul>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card bg-dark my-5">
+                <div class="card-body">
+                    <h2 class="card-title text-center text-white py-3">{{ title }}</h2>
+                    <ul class="text-center list-inline py-3">
+                        <li class="list-inline-item">
+                            <a routerLink="/home" class="btn btn-info">Home</a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a *ngIf="!userService.authenticated" routerLink="/login" class="btn btn-info">Login</a>
+                            <a *ngIf="userService.authenticated" (click)="userService.logout()" class="btn btn-info">Logout</a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a routerLink="/addUser" class="btn btn-info">Register</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <router-outlet></router-outlet>
         </div>
-      </div>
-      <router-outlet></router-outlet>
     </div>
-  </div>
 </div>
 
