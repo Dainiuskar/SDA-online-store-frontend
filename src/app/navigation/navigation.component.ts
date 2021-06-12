@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {AppService} from "../services/app-service/app.service";
+import {AppService} from "../services/app.service";
 import {Router} from "@angular/router";
 
 @Component({
@@ -22,7 +22,7 @@ export class NavigationComponent implements OnInit {
 
     logout() {
         this.loggedType = 'home';
-        this.auth.removeToken();
+        // this.auth.removeToken();
         this.auth.logout();
         this.route.navigateByUrl('/login').then();
     }

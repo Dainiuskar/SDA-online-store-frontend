@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {delay, finalize} from "rxjs/operators";
-import {User} from "../../model/user";
+import {User} from "../model/user";
 
 @Injectable({
     providedIn: 'root'
@@ -10,8 +10,8 @@ export class UserService {
 
     authenticated = false;
 
-    logoutUrl = 'http://localhost:8080/logout'
-    userUrl = 'http://localhost:8080/user'
+    logoutUrl = '/server/logout'
+    userUrl = '/server/user'
 
     constructor(private http: HttpClient) {
     }

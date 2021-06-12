@@ -6,7 +6,7 @@ import {AppRoutingModule} from "./app-routing.module";
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {FormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
-import {UserService} from "./services/user-service/user-service";
+import {UserService} from "./services/user-service";
 import { LoginComponent } from './login/login.component';
 import { ProductComponent } from './product/product.component';
 import { ProductsListComponent } from './products-list/products-list.component';

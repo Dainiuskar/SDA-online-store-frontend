@@ -18,14 +18,15 @@ export class AppService {
         return null;
     }
 
-    removeToken() {
-
-    }
-
     logout() {
 
     }
 
-    authenticate(credentials) {
+    isAuthenticated(): boolean {
+        return this.getToken() !== null;
+    }
+
+    private getToken() {
+        return this.storage.get('auth_token')
     }
 }
