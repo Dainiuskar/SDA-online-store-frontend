@@ -8,7 +8,7 @@
                        id="login"
                        name="login"
                        placeholder="Enter your Username"
-                       required #login="ngModel">
+                       required #login="ngModel" >
                 <div *ngIf="login.invalid && (login.dirty || login.touched)" class="alert alert-danger">
                     <p *ngIf="login.errors?.required">Username is required.</p>
                 </div>
