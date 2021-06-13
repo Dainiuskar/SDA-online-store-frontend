@@ -18,6 +18,5 @@ export class ProductService {
 
   addToCart(product: Product): Observable<any> {
     return this.http.get(this.allProductsUrl + product.id)
-
   }
 }
